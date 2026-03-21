@@ -1,19 +1,17 @@
 {
   "name": "@d-najd/universal-media-tracker-sdk",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean"
+    "build": "tsc"
   },
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }
 }
