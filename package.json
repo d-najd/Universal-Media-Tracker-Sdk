@@ -1,19 +1,21 @@
 {
   "name": "@d-najd/universal-media-tracker-sdk",
-  "version": "0.0.5",
+  "version": "0.0.6",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "main": "dist/index.js",
   "files": ["dist"],
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*"
+    ".": "./dist/index.esm.js"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "build2": "tsup src/**/* --format esm,cjs --dts --out-dir dist"
   },
   "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }
 }
