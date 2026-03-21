@@ -1,9 +1,13 @@
 {
   "name": "@d-najd/universal-media-tracker-sdk",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "files": ["dist"],
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*"
+  },
   "scripts": {
     "build": "tsc"
   },
