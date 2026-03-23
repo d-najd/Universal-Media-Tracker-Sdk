@@ -1,9 +1,12 @@
 import PluginConfig from "./types/pluginConfig";
 import Handler from "./types/handler/base/handler";
-import CreateResourceHandler from "./types/handler/media/createResourceHandler";
 import ResourceHandler from "./types/handler/media/resourceHandler";
 import CreateCatalogHandler from "./types/handler/media/catalog/createCatalogHandler";
 import PluginSpec from "./types/pluginSpec";
+import CreateResourceHandler from "./types/handler/media/createResourceHandler";
+import CreatePluginSourceHandler from "./types/handler/plugin/source/createPluginSourceHandler";
+import CreateHandler from "./types/handler/base/createHandler";
+import CreatePluginFactoryHandler from "./types/handler/plugin/factory/createPluginFactoryHandler";
 
 export default class Plugin {
 	readonly config: PluginConfig
@@ -33,12 +36,22 @@ export default class Plugin {
 		}
 	}
 
+	defineHandler(handler: CreateHandler): string {
+		const newHandler: Handler = {
+			id: `${this.config.id}-custom-${this.counter++}`,
+			...handler
+		}
+
+		this.handlers.set(newHandler.id, newHandler)
+		return newHandler.id
+	}
+
 	/**
 	 * @see Handler
 	 */
 	defineResourceHandler(handler: CreateResourceHandler): string {
 		const newHandler: ResourceHandler = {
-			id: `${this.config.id}-custom-${this.counter++}`,
+			id: `${this.config.id}-custom-resource-${this.counter++}`,
 			name: `${this.config.name}`,
 			...handler
 		}
@@ -53,13 +66,34 @@ export default class Plugin {
 	 * @see defineResourceHandler
 	 */
 	defineCatalogHandler(handler: CreateCatalogHandler): string {
-		const newHandler: CreateResourceHandler = {
-			id: `${this.config.id}-catalog-handler`,
+		const newHandler: ResourceHandler = {
+			id: `${this.config.id}-catalog`,
+			name: `${this.config.name}`,
 			...handler,
 			type: 'catalog-request'
 		}
 
 		return this.defineResourceHandler(newHandler)
+	}
+
+	definePluginSourceHandler(handler: CreatePluginSourceHandler): string {
+		const newHandler: Handler = {
+			id: `${this.config.id}-plugin-source`,
+			...handler,
+			type: 'plugin-source'
+		}
+
+		return this.defineHandler(newHandler)
+	}
+
+	definePluginFactoryHandler(handler: CreatePluginFactoryHandler): string {
+		const newHandler: Handler = {
+			id: `${this.config.id}-plugin-factory`,
+			...handler,
+			type: 'plugin-factory'
+		}
+
+		return this.defineHandler(newHandler)
 	}
 
 	// Used internally, private since its internal api

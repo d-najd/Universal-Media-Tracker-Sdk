@@ -1,18 +1,19 @@
 import BaseHandlerArgs from "../base/baseHandlerArgs";
 import BaseHandlerResponse from "../base/baseHandlerResponse";
-import Handler from "../base/handler";
-import ResourceHandlerType from "./resourceHandlerType";
 import ResourceType from "./resourceType";
+import BaseResourceHandler from "./baseResourceHandler";
+import Handler from "../base/handler";
+import HandlerTypes from "../base/handlerTypes";
 
 type ResourceHandler<
 	T extends BaseHandlerArgs = BaseHandlerArgs,
 	R extends BaseHandlerResponse = BaseHandlerResponse
-> = Handler<T, R> & {
+> = BaseResourceHandler<T, R> & Handler<T, R> & {
 	/**
 	 * Displayed in the app
 	 */
 	name: string
-	type: ResourceHandlerType | string
+	type: HandlerTypes | string
 	resourceType: ResourceType | string
 }
 

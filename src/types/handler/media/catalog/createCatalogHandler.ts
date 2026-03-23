@@ -1,13 +1,10 @@
-import CreateResourceHandler from "../createResourceHandler";
+import BaseResourceHandler from "../baseResourceHandler";
 import CatalogHandlerArgs from "./catalogHandlerArgs";
 import CatalogHandlerResponse from "./catalogHandlerResponse";
-import ResourceHandlerType from "../resourceHandlerType";
+import ResourceType from "../resourceType";
 
-type CreateCatalogHandler = Omit<
-	CreateResourceHandler<CatalogHandlerArgs, CatalogHandlerResponse>,
-	'type'
-> & {
-	type?: ResourceHandlerType | string
+type CreateCatalogHandler = BaseResourceHandler<CatalogHandlerArgs, CatalogHandlerResponse> & {
+	resourceType: ResourceType | string
 }
 
 export default CreateCatalogHandler

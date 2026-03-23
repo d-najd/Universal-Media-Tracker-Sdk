@@ -8,12 +8,16 @@
  *   id exists, it will be overridden.
  * - `name` name of the handler that will be displayed in the app
  * - `callback` callback function that is called when the handler is invoked
+ * @see BaseHandler
  */
 
 // eslint-disable-next-line
-type Handler<T = any, R = any> = {
+import BaseHandler from "./baseHandler";
+import HandlerTypes from "./handlerTypes";
+
+type Handler<T = any, R = any> = BaseHandler<T, R> & {
 	id: string
-	type: string
+	type: HandlerTypes | string
 	callback: (args: T) => Promise<R>
 }
 

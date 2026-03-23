@@ -1,0 +1,3 @@
+type PluginSourceHandlerArgs = {
+    uri: string
+}
