@@ -1,6 +1,7 @@
 import BaseHandler from "../../base/baseHandler";
-import PluginSourceHandlerResponse from "../source/pluginSourceHandlerResponse";
+import PluginFactoryHandlerArgs from "./pluginFactoryHandlerArgs";
+import PluginFactoryHandlerResponse from "./pluginFactoryHandlerResponse";
 
-type CreatePluginFactoryHandler = BaseHandler<PluginSourceHandlerArgs, PluginSourceHandlerResponse> & { }
+type CreatePluginFactoryHandler = BaseHandler<PluginFactoryHandlerArgs, PluginFactoryHandlerResponse> & { }
 
 export default CreatePluginFactoryHandler
