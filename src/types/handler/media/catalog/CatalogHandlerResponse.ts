@@ -1,5 +1,5 @@
-import BaseHandlerResponse from "../../base/baseHandlerResponse";
-import MetaPreview from "./metaPreview";
+import BaseHandlerResponse from "../../base/BaseHandlerResponse";
+import MetaPreview from "./MetaPreview";
 
 type CatalogHandlerResponse = BaseHandlerResponse<MetaPreview> & {}
 
