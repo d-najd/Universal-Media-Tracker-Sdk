@@ -1,9 +1,9 @@
-import BaseHandlerArgs from "../base/baseHandlerArgs";
-import BaseHandlerResponse from "../base/baseHandlerResponse";
-import ResourceType from "./resourceType";
-import BaseResourceHandler from "./baseResourceHandler";
-import Handler from "../base/handler";
-import HandlerTypes from "../base/handlerTypes";
+import BaseHandlerArgs from "../base/BaseHandlerArgs";
+import BaseHandlerResponse from "../base/BaseHandlerResponse";
+import ResourceType from "./ResourceType";
+import BaseResourceHandler from "./BaseResourceHandler";
+import Handler from "../base/Handler";
+import HandlerTypes from "../base/HandlerTypes";
 
 type ResourceHandler<
 	T extends BaseHandlerArgs = BaseHandlerArgs,

@@ -1,4 +1,4 @@
-import BaseHandlerArgs from "../../base/baseHandlerArgs";
+import BaseHandlerArgs from "../../base/BaseHandlerArgs";
 
 type CatalogHandlerArgs = BaseHandlerArgs & {}
 

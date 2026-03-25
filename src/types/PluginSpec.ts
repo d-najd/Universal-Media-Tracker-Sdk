@@ -1,5 +1,5 @@
-import PluginConfig from "./pluginConfig";
-import Handler from "./handler/base/handler";
+import PluginConfig from "./PluginConfig";
+import Handler from "./handler/base/Handler";
 
 export default interface PluginSpec {
 	readonly config: PluginConfig

@@ -1,12 +1,12 @@
-import PluginConfig from "./types/pluginConfig";
-import Handler from "./types/handler/base/handler";
-import ResourceHandler from "./types/handler/media/resourceHandler";
-import CreateCatalogHandler from "./types/handler/media/catalog/createCatalogHandler";
-import PluginSpec from "./types/pluginSpec";
-import CreateResourceHandler from "./types/handler/media/createResourceHandler";
-import CreatePluginSourceHandler from "./types/handler/plugin/source/createPluginSourceHandler";
-import CreateHandler from "./types/handler/base/createHandler";
-import CreatePluginFactoryHandler from "./types/handler/plugin/factory/createPluginFactoryHandler";
+import PluginConfig from "./types/PluginConfig";
+import Handler from "./types/handler/base/Handler";
+import ResourceHandler from "./types/handler/media/ResourceHandler";
+import CreateCatalogHandler from "./types/handler/media/catalog/CreateCatalogHandler";
+import PluginSpec from "./types/PluginSpec";
+import CreateResourceHandler from "./types/handler/media/CreateResourceHandler";
+import CreatePluginSourceHandler from "./types/handler/plugin/source/CreatePluginSourceHandler";
+import CreateHandler from "./types/handler/base/CreateHandler";
+import CreatePluginFactoryHandler from "./types/handler/plugin/factory/CreatePluginFactoryHandler";
 
 export default class Plugin {
 	readonly config: PluginConfig
