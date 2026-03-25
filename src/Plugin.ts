@@ -10,6 +10,9 @@ import CreatePluginFactoryHandler from "./types/handler/plugin/factory/CreatePlu
 
 export default class Plugin {
 	readonly config: PluginConfig
+	/**
+	 * key is the handler id
+	 */
 	private handlers = new Map<string, Handler>()
 
 	private counter = 0
