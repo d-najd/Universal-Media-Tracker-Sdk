@@ -1,6 +1,6 @@
 {
   "name": "@d-najd/universal-media-tracker-sdk",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "files": [
@@ -10,9 +10,13 @@
     "build": "tsc"
   },
   "exports": {
+    "./Plugin": {
+      "types": "./dist/Plugin.d.ts",
+      "import": "./dist/Plugin.js"
+    },
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./dist/Plugin.d.ts",
+      "default": "./dist/Plugin.js"
     },
     "./*": {
       "types": "./dist/*.d.ts",
