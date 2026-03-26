@@ -1,35 +1,27 @@
 {
   "name": "@d-najd/universal-media-tracker-sdk",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist/**"
+    "dist"
   ],
-  "scripts": {
-    "build": "tsc"
-  },
   "exports": {
-    "./Plugin": {
-      "types": "./dist/Plugin.d.ts",
-      "import": "./dist/Plugin.js"
-    },
     ".": {
-      "types": "./dist/Plugin.d.ts",
-      "default": "./dist/Plugin.js"
-    },
-    "./*": {
-      "types": "./dist/*.d.ts",
-      "default": "./dist/*"
-    },
-    "./**/*": {
-      "types": "./dist/**/*.d.ts",
-      "default": "./dist/**/*"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
+  },
+  "scripts": {
+    "prebuild": "node scripts/generate.js",
+    "build": "tsc"
   },
   "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "@types/node": "^25.5.0",
+    "glob": "^13.0.6",
     "typescript": "^5.9.3"
   }
 }
