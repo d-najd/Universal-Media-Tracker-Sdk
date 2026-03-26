@@ -1,5 +1,5 @@
 type PluginFactoryHandlerArgs = {
-    uri: string
+    url: string
 }
 
 export default PluginFactoryHandlerArgs

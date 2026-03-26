@@ -1,5 +1,5 @@
 type PluginSourceHandlerArgs = {
-    uri: string
+    url: string
 }
 
 export default PluginSourceHandlerArgs
