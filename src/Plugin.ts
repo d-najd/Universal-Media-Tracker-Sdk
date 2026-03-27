@@ -22,9 +22,6 @@ export default class Plugin {
 		this.config = options
 	}
 
-	/**
-	 * Don't define handlers here, they are part of the spec
-	 */
 	onLoad(callback: () => Promise<void>) {
 		this.onLoadCallback = async () => {
 			await callback()
@@ -101,9 +98,9 @@ export default class Plugin {
 
 	// Used internally, private since its internal api
 	// noinspection JSUnusedLocalSymbols
-	private getSpec(): PluginSpec {
+	private async getSpec(): Promise<PluginSpec> {
 		if (!this.loaded) {
-			throw Error("The plugin must be loaded before getting it's spec")
+			await this.onLoadCallback()
 		}
 
 		return {
