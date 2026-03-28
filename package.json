@@ -14,8 +14,7 @@
     }
   },
   "scripts": {
-    "prebuild": "node scripts/generate.js",
-    "build": "tsc"
+    "build": "node scripts/generate.js && tsc"
   },
   "license": "MIT",
   "type": "module",
