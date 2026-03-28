@@ -96,8 +96,7 @@ export default class Plugin {
 		return this.defineHandler(newHandler)
 	}
 
-	// Used internally, private since its internal api
-	// noinspection JSUnusedLocalSymbols
+	// Used internally
 	private async getSpec(): Promise<PluginSpec> {
 		if (!this.loaded) {
 			await this.onLoadCallback()
