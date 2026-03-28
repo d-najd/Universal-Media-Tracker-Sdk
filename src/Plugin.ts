@@ -67,13 +67,11 @@ export default class Plugin {
 	}
 
 	/**
-	 * Defines or overrides if a catalog handler has already been defined, if
-	 * you use multiple catalog handlers use `defineResourceHandler` instead
 	 * @see defineResourceHandler
 	 */
 	defineCatalogHandler(handler: CreateCatalogHandler): string {
 		const newHandler: ResourceHandler = {
-			id: `${this.config.id}-catalog`,
+			id: `${this.config.id}-catalog-${this.counter++}`,
 			name: `${this.config.name}`,
 			...handler,
 			type: 'catalog-request'
@@ -82,12 +80,9 @@ export default class Plugin {
 		return this.defineResourceHandler(newHandler)
 	}
 
-	/**
-	 * Defined or overrides the handler if already defined, if you need multiple handers use `defineHandler` instead
-	 */
 	definePluginSourceHandler(handler: CreatePluginSourceHandler): string {
 		const newHandler: Handler = {
-			id: `${this.config.id}-plugin-source`,
+			id: `${this.config.id}-plugin-source-${this.counter++}`,
 			...handler,
 			type: 'plugin-source'
 		}
@@ -95,12 +90,9 @@ export default class Plugin {
 		return this.defineHandler(newHandler)
 	}
 
-	/**
-	 * Defined or overrides the handler if already defined, if you need multiple handers use `defineHandler` instead
-	 */
 	definePluginFactoryHandler(handler: CreatePluginFactoryHandler): string {
 		const newHandler: Handler = {
-			id: `${this.config.id}-plugin-factory`,
+			id: `${this.config.id}-plugin-factory-${this.counter++}`,
 			...handler,
 			type: 'plugin-factory'
 		}
