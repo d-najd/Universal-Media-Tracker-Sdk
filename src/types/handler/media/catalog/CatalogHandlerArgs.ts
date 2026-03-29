@@ -1,5 +1,5 @@
-import BaseHandlerArgs from "../../base/BaseHandlerArgs";
+import ResourceHandlerArgs from "../ResourceHandlerArgs";
 
-type CatalogHandlerArgs = BaseHandlerArgs & { }
+type CatalogHandlerArgs = ResourceHandlerArgs & { }
 
 export default CatalogHandlerArgs

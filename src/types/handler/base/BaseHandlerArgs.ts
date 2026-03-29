@@ -1,6 +1,3 @@
-import ResourceExtra from "../media/ResourceExtra";
-
-type BaseHandlerArgs = {
-}
+type BaseHandlerArgs = { }
 
 export default BaseHandlerArgs

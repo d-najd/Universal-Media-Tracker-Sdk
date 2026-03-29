@@ -1,6 +1,6 @@
-import BaseHandlerResponse from "../../base/BaseHandlerResponse";
 import MetaPreview from "./MetaPreview";
+import ResourceHandlerResponse from "../ResourceHandlerResponse";
 
-type CatalogHandlerResponse = BaseHandlerResponse<MetaPreview> & {}
+type CatalogHandlerResponse = ResourceHandlerResponse<MetaPreview> & {}
 
 export default CatalogHandlerResponse
