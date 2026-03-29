@@ -8,8 +8,8 @@ type CreateResourceHandler<
     T extends BaseHandlerArgs = BaseHandlerArgs,
     R extends BaseHandlerResponse = BaseHandlerResponse
 > = BaseResourceHandler<T, R> & {
-    type: HandlerTypes | string,
-    resourceType: ResourceType | string
+    readonly type: HandlerTypes | string,
+    readonly resourceType: ResourceType | string
 }
 
 export default CreateResourceHandler

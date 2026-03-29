@@ -16,9 +16,9 @@ import BaseHandler from "./BaseHandler";
 import HandlerTypes from "./HandlerTypes";
 
 type Handler<T = any, R = any> = BaseHandler<T, R> & {
-	id: string
-	type: HandlerTypes | string
-	callback: (args: T) => Promise<R>
+	readonly id: string
+	readonly type: HandlerTypes | string
+	readonly callback: (args: T) => Promise<R>
 }
 
 export default Handler

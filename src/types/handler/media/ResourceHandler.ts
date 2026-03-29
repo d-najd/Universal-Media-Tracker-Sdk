@@ -12,9 +12,9 @@ type ResourceHandler<
 	/**
 	 * Displayed in the app
 	 */
-	name: string
-	type: HandlerTypes | string
-	resourceType: ResourceType | string
+	readonly name: string
+	readonly type: HandlerTypes | string
+	readonly resourceType: ResourceType | string
 }
 
 export default ResourceHandler

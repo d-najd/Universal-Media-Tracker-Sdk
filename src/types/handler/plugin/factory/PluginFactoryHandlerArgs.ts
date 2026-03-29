@@ -1,5 +1,5 @@
 type PluginFactoryHandlerArgs = {
-    url: string
+    readonly url: string
 }
 
 export default PluginFactoryHandlerArgs
