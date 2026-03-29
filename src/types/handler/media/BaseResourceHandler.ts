@@ -1,6 +1,6 @@
 import ResourceType from "./ResourceType";
 import BaseHandler from "../base/BaseHandler";
-import ResourceExtra from "./ResourceExtra";
+import ResourceBrowseOption from "./browse-option/ResourceBrowseOption";
 import ResourceHandlerArgs from "./ResourceHandlerArgs";
 import ResourceHandlerResponse from "./ResourceHandlerResponse";
 
@@ -10,7 +10,7 @@ type BaseResourceHandler<
 > = BaseHandler<T, R> & {
 	readonly name?: string
 	readonly resourceType?: ResourceType | string,
-	readonly extra?: ResourceExtra[]
+	readonly extra?: ResourceBrowseOption[]
 }
 
 export default BaseResourceHandler

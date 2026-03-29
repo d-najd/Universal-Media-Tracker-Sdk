@@ -1,6 +1,6 @@
-import TriState from "../../TriState";
+import TriState from "../../../TriState";
 
-type ResourceExtraArgs = {
+type ResourceBrowseOptionArgs = {
     readonly name: string,
     /**
      * @see ResourceExtra
@@ -8,4 +8,4 @@ type ResourceExtraArgs = {
     readonly input: string | number | string[] | ('asc' | 'desc') | TriState | TriState[]
 }
 
-export default ResourceExtraArgs
+export default ResourceBrowseOptionArgs

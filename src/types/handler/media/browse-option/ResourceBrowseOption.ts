@@ -1,5 +1,11 @@
-type ResourceExtra = {
-    readonly name: string,
+import { ResourceBrowseOptionDefaults } from "./ResourceBrowseOptionDefaults";
+
+/**
+ * @see ResourceBrowseOptionDefaults
+ * @see ResourceBrowseOptionArgs
+ */
+type ResourceBrowseOption = {
+    readonly name: ResourceBrowseOptionDefaults | string,
     /**
      * Maps to values in `ResourceExtraArgs`
      * `string` to `string`
@@ -9,12 +15,17 @@ type ResourceExtra = {
      * `direction` to `asc | desc` optional `options`
      * `radioTriState` to `TriState` uses `options`
      * `checkboxTriState` to `TriState[]` uses `options`
-     * @see ResourceExtra
+     * @see ResourceBrowseOption
      */
     readonly type: 'string' | 'number' | 'radio' | 'checkbox' | 'direction' | 'radioTriState' | 'checkboxTriState'
+    /**
+     * Used if there are multiple options, to define which they are, like [action, adventure, drama]
+     */
     readonly options?: string[]
-    readonly isRequired?: boolean // default's false
-    // readonly folder?: string // Planned for folders like in mihon
+    /**
+     * @default false
+     */
+    readonly isRequired?: boolean
 }
 
-export default ResourceExtra
+export default ResourceBrowseOption

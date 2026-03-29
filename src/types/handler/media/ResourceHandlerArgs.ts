@@ -1,9 +1,8 @@
 import BaseHandlerArgs from "../base/BaseHandlerArgs";
-import ResourceExtra from "./ResourceExtra";
+import ResourceBrowseOption from "./browse-option/ResourceBrowseOption";
 
 type ResourceHandlerArgs = BaseHandlerArgs & {
-    // If string it is text between
-    readonly extra?: ResourceExtra | string[]
+    readonly browseOptions?: ResourceBrowseOption[]
 }
 
 export default ResourceHandlerArgs
