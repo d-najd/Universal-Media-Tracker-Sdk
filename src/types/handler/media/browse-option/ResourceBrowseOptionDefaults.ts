@@ -1,3 +1,5 @@
-export type ResourceBrowseOptionDefaults =
+type ResourceBrowseOptionDefaults =
     'search' | // type string
     'skip'     // type number (int), `isRequired` always false
+
+export default ResourceBrowseOptionDefaults
