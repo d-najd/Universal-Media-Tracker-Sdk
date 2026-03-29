@@ -1,8 +1,8 @@
 import BaseHandlerArgs from "../base/BaseHandlerArgs";
-import ResourceBrowseOption from "./browse-option/ResourceBrowseOption";
+import {ResourceBrowseOptionArgs} from "../../../index";
 
 type ResourceHandlerArgs = BaseHandlerArgs & {
-    readonly browseOptions?: ResourceBrowseOption[]
+    readonly browseOptions?: ResourceBrowseOptionArgs[]
 }
 
 export default ResourceHandlerArgs

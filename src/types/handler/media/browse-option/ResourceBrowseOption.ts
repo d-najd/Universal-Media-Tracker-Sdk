@@ -1,4 +1,4 @@
-import { ResourceBrowseOptionDefaults } from "./ResourceBrowseOptionDefaults";
+import ResourceBrowseOptionDefaults from "./ResourceBrowseOptionDefaults";
 
 /**
  * @see ResourceBrowseOptionDefaults
