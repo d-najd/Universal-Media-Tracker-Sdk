@@ -10,7 +10,7 @@ type BaseResourceHandler<
 > = BaseHandler<T, R> & {
 	readonly name?: string
 	readonly resourceType?: ResourceType | string,
-	readonly browseOptions?: ResourceBrowseOption[]
+	readonly options?: ResourceBrowseOption[]
 }
 
 export default BaseResourceHandler
