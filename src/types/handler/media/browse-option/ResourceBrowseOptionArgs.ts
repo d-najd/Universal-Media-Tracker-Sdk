@@ -1,7 +1,8 @@
 import TriState from "../../../TriState";
+import ResourceBrowseOptionDefaults from "./ResourceBrowseOptionDefaults";
 
 type ResourceBrowseOptionArgs = {
-    readonly name: string,
+    readonly name: ResourceBrowseOptionDefaults | string,
     /**
      * @see ResourceExtra
      */
