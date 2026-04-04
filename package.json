@@ -1,6 +1,6 @@
 {
   "name": "@d-najd/universal-media-tracker-sdk",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "build": "node scripts/generate.js && tsc"
+    "build": "rimraf dist & node scripts/generate.js && tsc"
   },
   "license": "MIT",
   "type": "module",

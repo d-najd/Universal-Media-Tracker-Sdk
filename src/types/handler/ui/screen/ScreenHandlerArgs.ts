@@ -1,4 +1,4 @@
-import Navigator from '../Navigator'
+import Navigator from '../../../../navigator/Navigator'
 import { UseBoundStore, StoreApi } from "zustand";
 
 type ScreenHandlerArgs<S = any> = {
