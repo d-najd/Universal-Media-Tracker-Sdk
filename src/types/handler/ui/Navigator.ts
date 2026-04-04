@@ -1,9 +1,6 @@
 export default interface Navigator {
-    screens: any[]
+    screens: NavigatorEntry[]
     push(path: string): void
-    /**
-     * @return path
-     */
-    pop(): string
+    pop(): void
     replace(path: string): void
 }

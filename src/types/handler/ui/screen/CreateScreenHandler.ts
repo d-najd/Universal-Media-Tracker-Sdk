@@ -7,7 +7,7 @@ type CreateScreenHandler<S = any> = BaseHandler<ScreenHandlerArgs<S>, ScreenHand
     /**
      * /library/:id
      */
-    readonly path: string
+    readonly pattern: string
     /**
      * If undefined screen state won't be stored
      */

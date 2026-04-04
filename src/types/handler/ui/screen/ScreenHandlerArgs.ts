@@ -10,11 +10,11 @@ type ScreenHandlerArgs<S = any> = {
     /**
      * /library/1
      */
-    readonly resolvedPath: string
+    readonly path: string
     /**
      * /library/:id
      */
-    readonly path: string
+    readonly pattern: string
 }
 
 export default ScreenHandlerArgs
