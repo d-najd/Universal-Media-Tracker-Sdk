@@ -3,3 +3,5 @@ type NavigatorEntry = {
     path: string
     pattern: string
 }
+
+export default NavigatorEntry
