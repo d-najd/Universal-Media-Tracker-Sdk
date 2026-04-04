@@ -7,6 +7,7 @@ import CreateResourceHandler from "./types/handler/media/CreateResourceHandler";
 import CreatePluginSourceHandler from "./types/handler/plugin/source/CreatePluginSourceHandler";
 import CreateHandler from "./types/handler/base/CreateHandler";
 import CreatePluginFactoryHandler from "./types/handler/plugin/factory/CreatePluginFactoryHandler";
+import CreateScreenHandler from "./types/handler/ui/screen/CreateScreenHandler";
 
 export default class Plugin {
 	readonly config: PluginConfig
@@ -95,6 +96,16 @@ export default class Plugin {
 			id: `${this.config.id}-plugin-factory-${this.counter++}`,
 			...handler,
 			type: 'plugin-factory'
+		}
+
+		return this.defineHandler(newHandler)
+	}
+
+	defineScreenHandler(handler: CreateScreenHandler): string {
+		const newHandler: Handler = {
+			id: `${this.config.id}-ui-screen-${this.counter++}`,
+			...handler,
+			type: "ui-screen"
 		}
 
 		return this.defineHandler(newHandler)

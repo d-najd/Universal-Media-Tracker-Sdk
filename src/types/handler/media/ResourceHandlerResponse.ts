@@ -1,5 +1,5 @@
-import BaseHandlerResponse from "../base/BaseHandlerResponse";
-
-type ResourceHandlerResponse<T = any> = BaseHandlerResponse<T> & { }
+type ResourceHandlerResponse<T = any> = {
+    readonly data: T[]
+}
 
 export default ResourceHandlerResponse
