@@ -1,9 +1,12 @@
-import BaseResourceHandler from "../BaseResourceHandler";
-import CatalogHandlerArgs from "./CatalogHandlerArgs";
-import CatalogHandlerResponse from "./CatalogHandlerResponse";
-import ResourceType from "../ResourceType";
+import BaseResourceHandler from '../BaseResourceHandler'
+import CatalogHandlerArgs from './CatalogHandlerArgs'
+import CatalogHandlerResponse from './CatalogHandlerResponse'
+import ResourceType from '../ResourceType'
 
-type CreateCatalogHandler = BaseResourceHandler<CatalogHandlerArgs, CatalogHandlerResponse> & {
+type CreateCatalogHandler = BaseResourceHandler<
+	CatalogHandlerArgs,
+	CatalogHandlerResponse
+> & {
 	readonly resourceType: ResourceType | string
 }
 

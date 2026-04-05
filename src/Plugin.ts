@@ -111,6 +111,8 @@ export default class Plugin {
 		return this.defineHandler(newHandler)
 	}
 
+    defineCustomScreenHandler(handler: )
+
 	// Used internally
 	private async getSpec(): Promise<PluginSpec> {
 		if (!this.loaded) {

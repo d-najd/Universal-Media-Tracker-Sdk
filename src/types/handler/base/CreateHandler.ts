@@ -1,7 +1,7 @@
-import BaseHandler from "./BaseHandler";
+import BaseHandler from './BaseHandler'
 
 type CreateHandler<T = any, R = any> = BaseHandler<T, R> & {
-    readonly type: string
+	readonly type: string
 }
 
 export default CreateHandler

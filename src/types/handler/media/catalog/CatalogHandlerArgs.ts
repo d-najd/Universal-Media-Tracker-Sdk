@@ -1,5 +1,5 @@
-import ResourceHandlerArgs from "../ResourceHandlerArgs";
+import ResourceHandlerArgs from '../ResourceHandlerArgs'
 
-type CatalogHandlerArgs = ResourceHandlerArgs & { }
+type CatalogHandlerArgs = ResourceHandlerArgs & {}
 
 export default CatalogHandlerArgs

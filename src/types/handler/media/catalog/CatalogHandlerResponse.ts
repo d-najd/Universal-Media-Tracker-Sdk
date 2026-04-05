@@ -1,5 +1,5 @@
-import MetaPreview from "./MetaPreview";
-import ResourceHandlerResponse from "../ResourceHandlerResponse";
+import MetaPreview from './MetaPreview'
+import ResourceHandlerResponse from '../ResourceHandlerResponse'
 
 type CatalogHandlerResponse = ResourceHandlerResponse<MetaPreview> & {}
 

@@ -1,5 +1,5 @@
 type ResourceHandlerResponse<T = any> = {
-    readonly data: T[]
+	readonly data: T[]
 }
 
 export default ResourceHandlerResponse

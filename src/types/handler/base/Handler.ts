@@ -12,8 +12,8 @@
  */
 
 // eslint-disable-next-line
-import BaseHandler from "./BaseHandler";
-import HandlerTypes from "./HandlerTypes";
+import BaseHandler from './BaseHandler'
+import HandlerTypes from './HandlerTypes'
 
 type Handler<T = any, R = any> = BaseHandler<T, R> & {
 	readonly id: string

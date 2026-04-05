@@ -1,5 +1,5 @@
 type PluginSourceHandlerArgs = {
-    readonly url: string
+	readonly url: string
 }
 
 export default PluginSourceHandlerArgs

@@ -1,4 +1,4 @@
-import ResourceType from "../ResourceType";
+import ResourceType from '../ResourceType'
 
 type MetaPreview = {
 	readonly id: string

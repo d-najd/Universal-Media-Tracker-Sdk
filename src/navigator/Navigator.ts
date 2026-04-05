@@ -1,8 +1,8 @@
-import NavigatorEntry from "./NavigatorEntry";
+import NavigatorEntry from './NavigatorEntry'
 
 export default interface Navigator {
-    screens: NavigatorEntry[]
-    push(path: string): void
-    pop(): void
-    replace(path: string): void
+	screens: NavigatorEntry[]
+	push(path: string): void
+	pop(): void
+	replace(path: string): void
 }
