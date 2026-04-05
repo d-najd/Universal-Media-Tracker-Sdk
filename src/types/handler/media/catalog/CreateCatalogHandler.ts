@@ -2,10 +2,11 @@ import BaseResourceHandler from '../BaseResourceHandler'
 import CatalogHandlerArgs from './CatalogHandlerArgs'
 import CatalogHandlerResponse from './CatalogHandlerResponse'
 import ResourceType from '../ResourceType'
+import {MetaPreview} from "../../../../index";
 
-type CreateCatalogHandler = BaseResourceHandler<
+type CreateCatalogHandler<R extends MetaPreview = MetaPreview> = BaseResourceHandler<
 	CatalogHandlerArgs,
-	CatalogHandlerResponse
+	CatalogHandlerResponse<R>
 > & {
 	readonly resourceType: ResourceType | string
 }

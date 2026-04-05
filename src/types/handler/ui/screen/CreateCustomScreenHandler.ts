@@ -15,6 +15,7 @@ type CreateCustomScreenHandler<S = any> = BaseHandler<
 	 * If undefined screen state won't be stored
 	 */
 	readonly initialState?: S
+	readonly test?: S
 }
 
 export default CreateCustomScreenHandler

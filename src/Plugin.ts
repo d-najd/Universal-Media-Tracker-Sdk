@@ -9,6 +9,10 @@ import CreateHandler from './types/handler/base/CreateHandler'
 import CreatePluginFactoryHandler from './types/handler/plugin/factory/CreatePluginFactoryHandler'
 import CreateScreenHandler from './types/handler/ui/screen/CreateScreenHandler'
 import CreateCustomScreenHandler from './types/handler/ui/screen/CreateCustomScreenHandler'
+import {createZustandScreenStore} from "./types/handler/ui/screen/ZustandScreenStore";
+import ResourceHandlerArgs from "./types/handler/media/ResourceHandlerArgs";
+import ResourceHandlerResponse from "./types/handler/media/ResourceHandlerResponse";
+import MetaPreview from "./types/handler/media/catalog/MetaPreview";
 
 export default class Plugin {
 	readonly config: PluginConfig
@@ -105,7 +109,7 @@ export default class Plugin {
 	/**
 	 * Recommended version of defining screens since it has some tested defaults
 	 */
-	defineScreenHandler(handler: CreateScreenHandler): string {
+	defineScreenHandler<S>(handler: CreateScreenHandler<S>): string {
 		return this.defineCustomScreenHandler(handler)
 	}
 

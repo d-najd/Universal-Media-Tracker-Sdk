@@ -1,6 +1,6 @@
 import MetaPreview from './MetaPreview'
 import ResourceHandlerResponse from '../ResourceHandlerResponse'
 
-type CatalogHandlerResponse = ResourceHandlerResponse<MetaPreview> & {}
+type CatalogHandlerResponse<R extends MetaPreview = MetaPreview> = ResourceHandlerResponse<R> & {}
 
 export default CatalogHandlerResponse
