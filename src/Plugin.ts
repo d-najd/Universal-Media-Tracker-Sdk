@@ -1,13 +1,14 @@
-import PluginConfig from "./types/PluginConfig";
-import Handler from "./types/handler/base/Handler";
-import ResourceHandler from "./types/handler/media/ResourceHandler";
-import CreateCatalogHandler from "./types/handler/media/catalog/CreateCatalogHandler";
-import PluginSpec from "./types/PluginSpec";
-import CreateResourceHandler from "./types/handler/media/CreateResourceHandler";
-import CreatePluginSourceHandler from "./types/handler/plugin/source/CreatePluginSourceHandler";
-import CreateHandler from "./types/handler/base/CreateHandler";
-import CreatePluginFactoryHandler from "./types/handler/plugin/factory/CreatePluginFactoryHandler";
-import CreateScreenHandler from "./types/handler/ui/screen/CreateScreenHandler";
+import PluginConfig from './types/PluginConfig'
+import Handler from './types/handler/base/Handler'
+import ResourceHandler from './types/handler/media/ResourceHandler'
+import CreateCatalogHandler from './types/handler/media/catalog/CreateCatalogHandler'
+import PluginSpec from './types/PluginSpec'
+import CreateResourceHandler from './types/handler/media/CreateResourceHandler'
+import CreatePluginSourceHandler from './types/handler/plugin/source/CreatePluginSourceHandler'
+import CreateHandler from './types/handler/base/CreateHandler'
+import CreatePluginFactoryHandler from './types/handler/plugin/factory/CreatePluginFactoryHandler'
+import CreateScreenHandler from './types/handler/ui/screen/CreateScreenHandler'
+import CreateCustomScreenHandler from './types/handler/ui/screen/CreateCustomScreenHandler'
 
 export default class Plugin {
 	readonly config: PluginConfig
@@ -101,17 +102,25 @@ export default class Plugin {
 		return this.defineHandler(newHandler)
 	}
 
+	/**
+	 * Recommended version of defining screens since it has some tested defaults
+	 */
 	defineScreenHandler(handler: CreateScreenHandler): string {
+		return this.defineCustomScreenHandler(handler)
+	}
+
+	/**
+	 * Advanced version of defining screens, may lead to memory leaks if used misused
+	 */
+	defineCustomScreenHandler(handler: CreateCustomScreenHandler): string {
 		const newHandler: Handler = {
 			id: `${this.config.id}-ui-screen-${this.counter++}`,
 			...handler,
-			type: "ui-screen"
+			type: 'ui-screen'
 		}
 
 		return this.defineHandler(newHandler)
 	}
-
-    defineCustomScreenHandler(handler: )
 
 	// Used internally
 	private async getSpec(): Promise<PluginSpec> {

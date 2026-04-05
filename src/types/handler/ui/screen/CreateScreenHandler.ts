@@ -1,17 +1,11 @@
-import BaseHandler from '../../base/BaseHandler'
-import ScreenHandlerArgs from './ScreenHandlerArgs'
-import ScreenHandlerResponse from './ScreenHandlerResponse'
 import { StoreApi, UseBoundStore } from 'zustand'
+import CreateCustomScreenHandler from './CreateCustomScreenHandler'
 
-// type CreateScreenHandler<S = any> = BaseHandler<ScreenHandlerArgs<S>, ScreenHandlerResponse> & {
-//     /**
-//      * /library/:id
-//      */
-//     readonly pattern: string
-//     /**
-//      * If undefined screen state won't be stored
-//      */
-//     readonly initialState?: UseBoundStore<StoreApi<S>>
-// }
-//
-// export default CreateScreenHandler
+/**
+ * Uses zustand, react is also recommended
+ */
+type CreateScreenHandler<S = any> = CreateCustomScreenHandler<
+	UseBoundStore<StoreApi<S>>
+> & {}
+
+export default CreateScreenHandler

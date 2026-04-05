@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 type ScreenHandlerResponse = {
-	readonly framework: 'react'
+	// readonly framework: 'react' // if undefined assumed react
 	readonly content: ReactNode
 }
 
