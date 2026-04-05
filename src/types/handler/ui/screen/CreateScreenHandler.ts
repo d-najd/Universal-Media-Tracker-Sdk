@@ -1,11 +1,11 @@
 import CreateCustomScreenHandler from './CreateCustomScreenHandler'
-import {ZustandScreenStore} from "./ZustandScreenStore";
+import {ZustandStoreWrapper} from "./ZustandStoreWrapper";
 
 /**
  * Uses zustand, react is also recommended
  */
 type CreateScreenHandler<S = any> = CreateCustomScreenHandler<
-	ZustandScreenStore<S>
+	ZustandStoreWrapper<S>
 > & {}
 
 export default CreateScreenHandler

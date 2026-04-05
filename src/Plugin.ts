@@ -9,7 +9,7 @@ import CreateHandler from './types/handler/base/CreateHandler'
 import CreatePluginFactoryHandler from './types/handler/plugin/factory/CreatePluginFactoryHandler'
 import CreateScreenHandler from './types/handler/ui/screen/CreateScreenHandler'
 import CreateCustomScreenHandler from './types/handler/ui/screen/CreateCustomScreenHandler'
-import {createZustandScreenStore} from "./types/handler/ui/screen/ZustandScreenStore";
+import {createZustandStoreWrapper} from "./types/handler/ui/screen/ZustandStoreWrapper";
 import ResourceHandlerArgs from "./types/handler/media/ResourceHandlerArgs";
 import ResourceHandlerResponse from "./types/handler/media/ResourceHandlerResponse";
 import MetaPreview from "./types/handler/media/catalog/MetaPreview";
