@@ -109,7 +109,7 @@ export default class Plugin {
 	/**
 	 * Recommended version of defining screens since it has some tested defaults
 	 */
-	defineScreenHandler<S>(handler: CreateScreenHandler<S>): string {
+	defineScreenHandler(handler: CreateScreenHandler): string {
 		return this.defineCustomScreenHandler(handler)
 	}
 
