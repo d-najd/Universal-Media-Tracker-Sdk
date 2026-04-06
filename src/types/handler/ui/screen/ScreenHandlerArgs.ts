@@ -1,6 +1,6 @@
 import Navigator from '../../../../navigator/Navigator'
 
-type ScreenHandlerArgs<S extends StoreWrapper<S>> = {
+type ScreenHandlerArgs<S extends StoreWrapper<S> = StoreWrapper> = {
 	/**
 	 * If undefined in handler won't be passed here
 	 */

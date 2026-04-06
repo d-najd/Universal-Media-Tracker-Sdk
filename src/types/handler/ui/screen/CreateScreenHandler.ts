@@ -1,11 +1,9 @@
 import CreateCustomScreenHandler from './CreateCustomScreenHandler'
-import {ZustandStoreWrapper } from "./ZustandStoreWrapper";
 
 /**
  * Uses zustand, react is also recommended
  */
-type CreateScreenHandler<S extends ZustandStoreWrapper<S>> = CreateCustomScreenHandler<
-	S
-> & {}
-
+type CreateScreenHandler<
+	S extends StoreWrapper<S> = StoreWrapper
+> = CreateCustomScreenHandler<S> & {}
 export default CreateScreenHandler

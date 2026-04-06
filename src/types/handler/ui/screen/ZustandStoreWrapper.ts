@@ -1,6 +1,6 @@
 import {create, StoreApi, UseBoundStore} from "zustand";
 
-export type ZustandStoreWrapper<S> = UseBoundStore<StoreApi<S>> & StoreWrapper<S>
+export type ZustandStoreWrapper<S = any> = UseBoundStore<StoreApi<S>> & StoreWrapper<S>
 
 export function createZustandStoreWrapper<S>(initial: S): ZustandStoreWrapper<S> {
     const store = create<S>(() => initial)
@@ -11,8 +11,8 @@ export function createZustandStoreWrapper<S>(initial: S): ZustandStoreWrapper<S>
         return selector(store.getState())
     }) as ZustandStoreWrapper<S>
 
-    hook.getState = store.getState
-    hook.setState = store.setState
+    hook.getStateFromWrapper = store.getState
+    hook.setStateFromWrapper = store.setState
     hook.subscribe = store.subscribe
 
     return hook

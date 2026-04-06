@@ -1,4 +1,4 @@
-type StoreWrapper<T> = {
-    getState(): T
-    setState(state: T): void
+type StoreWrapper<T = any> = {
+    getStateFromWrapper(): T
+    setStateFromWrapper(state: T): void
 }
