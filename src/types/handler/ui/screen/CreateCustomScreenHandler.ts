@@ -1,9 +1,8 @@
-import { CreateScreenHandler } from '../../../..'
 import BaseHandler from '../../base/BaseHandler'
 import ScreenHandlerArgs from './ScreenHandlerArgs'
 import ScreenHandlerResponse from './ScreenHandlerResponse'
 
-type CreateCustomScreenHandler<S = any> = BaseHandler<
+type CreateCustomScreenHandler<S extends StoreWrapper<S>> = BaseHandler<
 	ScreenHandlerArgs<S>,
 	ScreenHandlerResponse
 > & {

@@ -1,7 +1,6 @@
 import Navigator from '../../../../navigator/Navigator'
-import { UseBoundStore, StoreApi } from 'zustand'
 
-type ScreenHandlerArgs<S = any> = {
+type ScreenHandlerArgs<S extends StoreWrapper<S>> = {
 	/**
 	 * If undefined in handler won't be passed here
 	 */
