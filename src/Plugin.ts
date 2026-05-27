@@ -118,7 +118,10 @@ export default class Plugin {
 		const newHandler: Handler = {
 			id: `${this.config.id}-ui-screen-${this.counter++}`,
 			...handler,
-			type: 'ui-screen'
+			type: 'ui-screen',
+			callback: () => {
+				throw Error("Don't use regular callback for ui!")
+			}
 		}
 
 		return this.defineHandler(newHandler)

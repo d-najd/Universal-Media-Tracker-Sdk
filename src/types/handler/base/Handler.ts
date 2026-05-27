@@ -19,6 +19,7 @@ type Handler<T = any, R = any> = BaseHandler<T, R> & {
 	readonly id: string
 	readonly type: HandlerTypes | string
 	readonly callback: (args: T) => Promise<R>
+   readonly callbackSync?: (args: T) => R
 }
 
 export default Handler
