@@ -9,17 +9,15 @@ import CreateHandler from './types/handler/base/CreateHandler'
 import CreatePluginFactoryHandler from './types/handler/plugin/factory/CreatePluginFactoryHandler'
 import CreateScreenHandler from './types/handler/ui/screen/CreateScreenHandler'
 import CreateCustomScreenHandler from './types/handler/ui/screen/CreateCustomScreenHandler'
-import {createZustandStoreWrapper, ZustandStoreWrapper} from "./types/handler/ui/screen/ZustandStoreWrapper";
-import ResourceHandlerArgs from "./types/handler/media/ResourceHandlerArgs";
-import ResourceHandlerResponse from "./types/handler/media/ResourceHandlerResponse";
-import MetaPreview from "./types/handler/media/catalog/MetaPreview";
+import AppApi from './AppApi'
 
 export default class Plugin {
 	readonly config: PluginConfig
+	app: AppApi = {} as any // Stub, set before onLoad
 	/**
 	 * key is the handler id
 	 */
-	private handlers = new Map<string, Handler>()
+	protected handlers = new Map<string, Handler>()
 
 	private counter = 0
 	private loaded = false
