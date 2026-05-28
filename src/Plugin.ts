@@ -119,9 +119,7 @@ export default class Plugin {
 			id: `${this.config.id}-ui-screen-${this.counter++}`,
 			...handler,
 			type: 'ui-screen',
-			callback: () => {
-				throw Error("Don't use regular callback for ui!")
-			}
+         callback: handler.callback as unknown as ((args: any) => Promise<any>)
 		}
 
 		return this.defineHandler(newHandler)
