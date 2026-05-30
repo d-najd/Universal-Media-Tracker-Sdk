@@ -1,6 +1,12 @@
 type NavigatorEntry = {
 	state: any
+	/**
+	 * Example /library/1
+	 */
 	path: string
+	/**
+	 * Example /library/:id
+	 */
 	pattern: string
 }
 

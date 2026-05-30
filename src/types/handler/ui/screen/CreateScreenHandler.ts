@@ -1,9 +1,14 @@
-import CreateCustomScreenHandler from './CreateCustomScreenHandler'
+import BaseHandler from '../../base/BaseHandler'
+import ScreenHandlerArgs from './ScreenHandlerArgs'
+import ScreenHandlerResponse from './ScreenHandlerResponse'
 
-/**
- * Uses zustand, react is also recommended
- */
-type CreateScreenHandler<
-	S extends StoreWrapper<S> = StoreWrapper
-> = CreateCustomScreenHandler<S> & {}
+type CreateScreenHandler = Omit<BaseHandler<ScreenHandlerArgs, ScreenHandlerResponse>, 'callback'> & {
+	/**
+	 * /library/:id
+	 */
+	readonly pattern: string
+
+	readonly callback: (args: ScreenHandlerArgs) => ScreenHandlerResponse
+}
+
 export default CreateScreenHandler

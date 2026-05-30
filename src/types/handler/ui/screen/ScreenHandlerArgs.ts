@@ -1,8 +1,4 @@
-type ScreenHandlerArgs<S extends StoreWrapper<S> = StoreWrapper> = {
-	/**
-	 * If undefined in handler won't be passed here
-	 */
-	readonly state?: S
+type ScreenHandlerArgs = {
 	/**
 	 * /library/1
 	 */
