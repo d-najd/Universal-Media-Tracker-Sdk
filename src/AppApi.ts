@@ -21,5 +21,8 @@ export interface AppPluginsApi {
 }
 
 export interface AppUIApi {
+	/**
+	 * Works like a stack
+	 */
 	navigator: Navigator
 }
