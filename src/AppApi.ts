@@ -1,12 +1,14 @@
 import Handler from './types/handler/base/Handler'
 import Navigator from './navigator/Navigator'
+import LocalPluginConfig from './types/LocalPluginConfig'
 
 export default interface AppApi {
-	plugins: AppPluginsApi
+	plugin: AppPluginsApi
 	ui: AppUIApi
 }
 
 export interface AppPluginsApi {
+	getLocalPluginConfigs(): LocalPluginConfig[]
 	getHandlersMatching(condition: (entry: Handler) => boolean): Handler[]
 
 	/**
