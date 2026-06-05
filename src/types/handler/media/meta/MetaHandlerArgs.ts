@@ -1,5 +1,7 @@
-import ResourceHandlerArgs from "../ResourceHandlerArgs"
+import ResourceHandlerArgs from '../ResourceHandlerArgs'
 
-type MetaHandlerArgs = ResourceHandlerArgs & {}
+type MetaHandlerArgs = ResourceHandlerArgs & {
+	readonly metaId: string
+}
 
 export default MetaHandlerArgs

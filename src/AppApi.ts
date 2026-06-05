@@ -1,5 +1,4 @@
 import Handler from './types/handler/base/Handler'
-import Navigator from './navigator/Navigator'
 import LocalPluginConfig from './types/LocalPluginConfig'
 
 export default interface AppApi {
@@ -22,9 +21,4 @@ export interface AppPluginsApi {
 	invokeCallbackOnHandler<T, R>(id: string, args: T): Promise<R>
 }
 
-export interface AppUIApi {
-	/**
-	 * Works like a stack
-	 */
-	navigator: Navigator
-}
+export interface AppUIApi {}
