@@ -1,5 +1,4 @@
 type NavigatorEntry = {
-	state: any
 	/**
 	 * Example /library/1
 	 */
