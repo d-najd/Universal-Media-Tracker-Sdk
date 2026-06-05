@@ -9,6 +9,7 @@ import CreateHandler from './types/handler/base/CreateHandler'
 import CreatePluginFactoryHandler from './types/handler/plugin/factory/CreatePluginFactoryHandler'
 import AppApi from './AppApi'
 import CreateScreenHandler from './types/handler/ui/screen/CreateScreenHandler'
+import CreateMetaHandler from './types/handler/media/meta/CreateMetaHandler'
 
 export default class Plugin {
 	readonly config: PluginConfig
@@ -83,6 +84,20 @@ export default class Plugin {
 		return this.defineResourceHandler(newHandler)
 	}
 
+	/**
+	 * @see defineResourceHandler
+	 */
+	defineMetaHandler(handler: CreateMetaHandler): string {
+		const newHandler: ResourceHandler = {
+			id: `${this.config.id}-meta-${this.counter++}`,
+			name: `${this.config.name}`,
+			...handler,
+			type: 'meta-request'
+		}
+
+		return this.defineResourceHandler(newHandler)
+	}
+
 	definePluginSourceHandler(handler: CreatePluginSourceHandler): string {
 		const newHandler: Handler = {
 			id: `${this.config.id}-plugin-source-${this.counter++}`,
@@ -108,7 +123,7 @@ export default class Plugin {
 			id: `${this.config.id}-ui-screen-${this.counter++}`,
 			...handler,
 			type: 'ui-screen',
-         callback: handler.callback as unknown as ((args: any) => Promise<any>)
+			callback: handler.callback as unknown as (args: any) => Promise<any>
 		}
 
 		return this.defineHandler(newHandler)
