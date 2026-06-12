@@ -1,7 +1,5 @@
 import ResourceHandlerArgs from '../ResourceHandlerArgs'
 
-type MetaHandlerArgs = ResourceHandlerArgs & {
-	readonly metaId: string
-}
+type MetaHandlerArgs = ResourceHandlerArgs & {}
 
 export default MetaHandlerArgs
