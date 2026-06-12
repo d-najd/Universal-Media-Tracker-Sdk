@@ -1,8 +1,11 @@
-import BaseHandler from '../../base/BaseHandler'
-import ScreenHandlerArgs from './ScreenHandlerArgs'
-import ScreenHandlerResponse from './ScreenHandlerResponse'
+import BaseHandler from "../../base/BaseHandler"
+import ScreenHandlerArgs from "./ScreenHandlerArgs"
+import ScreenHandlerResponse from "./ScreenHandlerResponse"
 
-type CreateScreenHandler = Omit<BaseHandler<ScreenHandlerArgs, ScreenHandlerResponse>, 'callback'> & {
+type CreateScreenHandler = Omit<
+	BaseHandler<ScreenHandlerArgs, ScreenHandlerResponse>,
+	"callback"
+> & {
 	/**
 	 * /library/:id
 	 */

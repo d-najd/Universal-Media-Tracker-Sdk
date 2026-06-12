@@ -1,4 +1,4 @@
-import ResourceHandlerArgs from '../ResourceHandlerArgs'
+import ResourceHandlerArgs from "../ResourceHandlerArgs"
 
 type MetaHandlerArgs = ResourceHandlerArgs & {}
 

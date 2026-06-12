@@ -1,8 +1,8 @@
-import ResourceType from './ResourceType'
-import BaseHandler from '../base/BaseHandler'
-import ResourceBrowseOption from './browse-option/ResourceBrowseOption'
-import ResourceHandlerArgs from './ResourceHandlerArgs'
-import ResourceHandlerResponse from './ResourceHandlerResponse'
+import ResourceType from "./ResourceType"
+import BaseHandler from "../base/BaseHandler"
+import ResourceBrowseOption from "./browse-option/ResourceBrowseOption"
+import ResourceHandlerArgs from "./ResourceHandlerArgs"
+import ResourceHandlerResponse from "./ResourceHandlerResponse"
 
 type BaseResourceHandler<
 	T extends ResourceHandlerArgs = ResourceHandlerArgs,

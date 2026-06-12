@@ -1,5 +1,5 @@
-import Handler from './types/handler/base/Handler'
-import LocalPluginConfig from './types/LocalPluginConfig'
+import Handler from "./types/handler/base/Handler"
+import LocalPluginConfig from "./types/LocalPluginConfig"
 
 export default interface AppApi {
 	plugin: AppPluginsApi

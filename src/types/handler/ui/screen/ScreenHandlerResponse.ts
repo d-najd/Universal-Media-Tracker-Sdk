@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react"
 
 type ScreenHandlerResponse = {
 	// readonly framework: 'react' // if undefined assumed react

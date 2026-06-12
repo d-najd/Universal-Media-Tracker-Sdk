@@ -1,7 +1,7 @@
-import PluginConfig from './PluginConfig'
+import PluginConfig from "./PluginConfig"
 
 type LocalPluginConfig = PluginConfig & {
-	readonly status: 'enabled' | 'disabled'
+	readonly status: "enabled" | "disabled"
 	readonly url: string
 	/**
 	 * ID of the handler this was handled with
@@ -13,7 +13,7 @@ type LocalPluginConfig = PluginConfig & {
 	 * removed
 	 */
 	readonly handlerPluginId: string
-	readonly loadedFrom: 'plugin-factory' | 'plugin-source'
+	readonly loadedFrom: "plugin-factory" | "plugin-source"
 }
 
 export default LocalPluginConfig

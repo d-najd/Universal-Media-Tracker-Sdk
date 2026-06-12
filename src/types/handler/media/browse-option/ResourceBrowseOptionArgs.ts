@@ -1,5 +1,5 @@
-import TriState from '../../../TriState'
-import ResourceBrowseOptionDefaults from './ResourceBrowseOptionDefaults'
+import TriState from "../../../TriState"
+import ResourceBrowseOptionDefaults from "./ResourceBrowseOptionDefaults"
 
 type ResourceBrowseOptionArgs = {
 	readonly name: ResourceBrowseOptionDefaults | string
@@ -10,7 +10,7 @@ type ResourceBrowseOptionArgs = {
 		| string
 		| number
 		| string[]
-		| ('asc' | 'desc')
+		| ("asc" | "desc")
 		| TriState
 		| TriState[]
 }

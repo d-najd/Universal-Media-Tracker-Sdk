@@ -1,3 +1,3 @@
-type TriState = 'include' | 'exclude' | 'unspecified'
+type TriState = "include" | "exclude" | "unspecified"
 
 export default TriState
