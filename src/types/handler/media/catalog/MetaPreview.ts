@@ -1,7 +1,7 @@
 import ResourceType from "../ResourceType"
 
 type MetaPreview = {
-	readonly ids: Record<string, string>
+	readonly ids: string[]
 	/**
 	 * content type should be retrieved from the mime type
 	 */

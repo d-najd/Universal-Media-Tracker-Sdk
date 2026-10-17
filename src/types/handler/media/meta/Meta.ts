@@ -4,7 +4,7 @@ import ResourceType from "../ResourceType"
  * undefined fields will be fetched from MetaPreview
  */
 type Meta = {
-	readonly ids: Record<string, string>
+	readonly ids: string[]
 	/**
 	 * content type should be retrieved from the mime type
 	 * Fetched from MetaPreview,
