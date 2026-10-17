@@ -2,7 +2,7 @@ import StorageBackend from "./StorageBackend"
 import StoragePolicy from "./StoragePolicy"
 
 /**
- * storage layout
+ * On-disk layout:
  *
  * default/ (profile)
  * ├── session/ (policy)
@@ -22,32 +22,34 @@ import StoragePolicy from "./StoragePolicy"
  */
 type StorageOptions = {
 	/**
-	 * If defined will use the specific backend otherwise will try to pick the best backend available
+	 * When undefined, the best available backend is chosen automatically.
 	 */
 	backend: StorageBackend
+
 	/**
-	 * default: "cache"
+	 * Every stored entry belongs to exactly one policy.
 	 *
-	 * Each stored entry must have one but when passing this field to [DirStorage] if undefined it defaults to "cache"
+	 * @default "cache"
 	 */
 	policy: StoragePolicy
+
 	/**
-	 * default: "default"
-	 *
-	 * Data is split into profiles
+	 * @default "default"
 	 */
 	profile: string
+
 	createdAt: number
 	updatedAt: number
-	/**
-	 * Time to live
-	 */
+
 	ttl?: number
-	custom?: Record<string, string>
+
 	/**
-	 * What driver is responsible for creating/managing the metadata and the file
+	 * The module that last created or modified this entry (e.g., "dir-storage", "id-storage").
+	 * Used to determine how the entry should be parsed or routed.
 	 */
-	driver?: string // TODO add tests for this
+	driver?: string
+
+	custom?: Record<string, string>
 }
 
 export default StorageOptions
