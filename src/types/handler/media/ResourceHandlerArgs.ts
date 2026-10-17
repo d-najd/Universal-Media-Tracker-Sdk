@@ -1,4 +1,4 @@
-import { ResourceBrowseOptionArgs } from '../../../index'
+import { ResourceBrowseOptionArgs } from "../../../index"
 
 type ResourceHandlerArgs = {
 	readonly options?: ResourceBrowseOptionArgs[]

@@ -1,4 +1,4 @@
-import ResourceBrowseOptionDefaults from './ResourceBrowseOptionDefaults'
+import ResourceBrowseOptionDefaults from "./ResourceBrowseOptionDefaults"
 
 /**
  * @see ResourceBrowseOptionDefaults
@@ -18,13 +18,13 @@ type ResourceBrowseOption = {
 	 * @see ResourceBrowseOption
 	 */
 	readonly type:
-		| 'string'
-		| 'number'
-		| 'radio'
-		| 'checkbox'
-		| 'direction'
-		| 'radioTriState'
-		| 'checkboxTriState'
+		| "string"
+		| "number"
+		| "radio"
+		| "checkbox"
+		| "direction"
+		| "radioTriState"
+		| "checkboxTriState"
 	/**
 	 * Used if there are multiple options, to define which they are, like [action, adventure, drama]
 	 */

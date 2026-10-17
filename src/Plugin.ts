@@ -1,15 +1,15 @@
-import PluginConfig from './types/PluginConfig'
-import Handler from './types/handler/base/Handler'
-import ResourceHandler from './types/handler/media/ResourceHandler'
-import CreateCatalogHandler from './types/handler/media/catalog/CreateCatalogHandler'
-import PluginSpec from './types/PluginSpec'
-import CreateResourceHandler from './types/handler/media/CreateResourceHandler'
-import CreatePluginSourceHandler from './types/handler/plugin/source/CreatePluginSourceHandler'
-import CreateHandler from './types/handler/base/CreateHandler'
-import CreatePluginFactoryHandler from './types/handler/plugin/factory/CreatePluginFactoryHandler'
-import CreateScreenHandler from './types/handler/ui/screen/CreateScreenHandler'
-import CreateCustomScreenHandler from './types/handler/ui/screen/CreateCustomScreenHandler'
-import AppApi from './AppApi'
+import PluginConfig from "./types/PluginConfig"
+import Handler from "./types/handler/base/Handler"
+import ResourceHandler from "./types/handler/media/ResourceHandler"
+import CreateCatalogHandler from "./types/handler/media/catalog/CreateCatalogHandler"
+import PluginSpec from "./types/PluginSpec"
+import CreateResourceHandler from "./types/handler/media/CreateResourceHandler"
+import CreatePluginSourceHandler from "./types/handler/plugin/source/CreatePluginSourceHandler"
+import CreateHandler from "./types/handler/base/CreateHandler"
+import CreatePluginFactoryHandler from "./types/handler/plugin/factory/CreatePluginFactoryHandler"
+import AppApi from "./AppApi"
+import CreateScreenHandler from "./types/handler/ui/screen/CreateScreenHandler"
+import CreateMetaHandler from "./types/handler/media/meta/CreateMetaHandler"
 
 export default class Plugin {
 	readonly config: PluginConfig
@@ -78,7 +78,21 @@ export default class Plugin {
 			id: `${this.config.id}-catalog-${this.counter++}`,
 			name: `${this.config.name}`,
 			...handler,
-			type: 'catalog-request'
+			type: "catalog-request"
+		}
+
+		return this.defineResourceHandler(newHandler)
+	}
+
+	/**
+	 * @see defineResourceHandler
+	 */
+	defineMetaHandler(handler: CreateMetaHandler): string {
+		const newHandler: ResourceHandler = {
+			id: `${this.config.id}-meta-${this.counter++}`,
+			name: `${this.config.name}`,
+			...handler,
+			type: "meta-request"
 		}
 
 		return this.defineResourceHandler(newHandler)
@@ -88,7 +102,7 @@ export default class Plugin {
 		const newHandler: Handler = {
 			id: `${this.config.id}-plugin-source-${this.counter++}`,
 			...handler,
-			type: 'plugin-source'
+			type: "plugin-source"
 		}
 
 		return this.defineHandler(newHandler)
@@ -98,30 +112,18 @@ export default class Plugin {
 		const newHandler: Handler = {
 			id: `${this.config.id}-plugin-factory-${this.counter++}`,
 			...handler,
-			type: 'plugin-factory'
+			type: "plugin-factory"
 		}
 
 		return this.defineHandler(newHandler)
 	}
 
-	/**
-	 * Recommended version of defining screens since it has some tested defaults
-	 */
 	defineScreenHandler(handler: CreateScreenHandler): string {
-		return this.defineCustomScreenHandler(handler)
-	}
-
-	/**
-	 * Advanced version of defining screens, may lead to memory leaks if used misused
-	 */
-	defineCustomScreenHandler(handler: CreateCustomScreenHandler): string {
 		const newHandler: Handler = {
 			id: `${this.config.id}-ui-screen-${this.counter++}`,
 			...handler,
-			type: 'ui-screen',
-			callback: () => {
-				throw Error("Don't use regular callback for ui!")
-			}
+			type: "ui-screen",
+			callback: handler.callback as unknown as (args: any) => Promise<any>
 		}
 
 		return this.defineHandler(newHandler)

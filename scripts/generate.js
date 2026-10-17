@@ -1,21 +1,21 @@
-import fs from 'fs'
-import path from 'path'
-import { fileURLToPath } from 'url'
-import { glob } from 'glob' // npm install glob --save-dev
+import fs from "fs"
+import path from "path"
+import { fileURLToPath } from "url"
+import { glob } from "glob" // npm install glob --save-dev
 
 // Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 // ---------- CONFIGURATION ----------
-const srcDir = path.join(__dirname, '../src') // source folder
-const outputFile = path.join(srcDir, 'index.ts') // generated barrel file
+const srcDir = path.join(__dirname, "../src") // source folder
+const outputFile = path.join(srcDir, "index.ts") // generated barrel file
 const excludePatterns = [
-	'**/*.test.ts',
-	'**/*.spec.ts',
-	'**/*.d.ts', // exclude tests & declaration files
-	'**/index.ts', // exclude existing index
-	'**/__tests__/**' // exclude test folders
+	"**/*.test.ts",
+	"**/*.spec.ts",
+	"**/*.d.ts", // exclude tests & declaration files
+	"**/index.ts", // exclude existing index
+	"**/__tests__/**" // exclude test folders
 ]
 const useFileNameAsExportName = true // use filename (without ext) as export name
 const includeNamedExports = true // also export * for files with named exports
@@ -47,13 +47,13 @@ async function main() {
 	})
 	console.log(`Found ${files.length} files.`)
 
-	const lines = ['// Auto‑generated barrel file – do not edit manually', '']
+	const lines = ["// Auto‑generated barrel file – do not edit manually", ""]
 
 	for (const file of files) {
 		const relativePath = path.relative(srcDir, file)
 		const importPath =
-			'./' + relativePath.replace(/\\/g, '/').replace(/\.tsx?$/, '')
-		const content = fs.readFileSync(file, 'utf-8')
+			"./" + relativePath.replace(/\\/g, "/").replace(/\.tsx?$/, "")
+		const content = fs.readFileSync(file, "utf-8")
 
 		const hasDefault = hasDefaultExport(content)
 		const hasNamed = hasNamedExport(content)
@@ -61,7 +61,7 @@ async function main() {
 		if (hasDefault) {
 			const exportName = useFileNameAsExportName
 				? toIdentifier(relativePath)
-				: 'default'
+				: "default"
 			lines.push(
 				`export { default as ${exportName} } from '${importPath}';`
 			)
@@ -72,7 +72,7 @@ async function main() {
 		}
 	}
 
-	fs.writeFileSync(outputFile, lines.join('\n'), 'utf-8')
+	fs.writeFileSync(outputFile, lines.join("\n"), "utf-8")
 	console.log(`Generated ${outputFile}`)
 }
 

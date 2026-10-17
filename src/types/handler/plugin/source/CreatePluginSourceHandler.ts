@@ -1,6 +1,6 @@
-import PluginSourceHandlerResponse from './PluginSourceHandlerResponse'
-import BaseHandler from '../../base/BaseHandler'
-import PluginSourceHandlerArgs from './PluginSourceHandlerArgs'
+import PluginSourceHandlerResponse from "./PluginSourceHandlerResponse"
+import BaseHandler from "../../base/BaseHandler"
+import PluginSourceHandlerArgs from "./PluginSourceHandlerArgs"
 
 type CreatePluginSourceHandler = BaseHandler<
 	PluginSourceHandlerArgs,
