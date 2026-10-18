@@ -6,7 +6,6 @@ import LocalPluginConfig from "./types/LocalPluginConfig"
 export default interface AppApi {
 	plugin: AppPluginsApi
 	storage: StorageApi
-	// ui: AppUIApi
 }
 
 export interface AppPluginsApi {
@@ -35,5 +34,3 @@ export interface StorageApi {
 	 */
 	media: IdStorage
 }
-
-// export interface AppUIApi {}
