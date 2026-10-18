@@ -29,7 +29,7 @@ export default interface IdStorage {
 	 * Creates a new entry or overrides the data and aliases of an existing one.
 	 *
 	 * @param data The data to store.
-	 * @param ids IDs to associate with this data. If any ID already exists, 
+	 * @param ids IDs to associate with this data. If any ID already exists,
 	 *            the data and alias set are replaced. If none exist, a new entry is created.
 	 *
 	 * @throws Error if the provided IDs resolve to more than one existing entry.
@@ -58,7 +58,7 @@ export default interface IdStorage {
 
 	/**
 	 * Removes aliases from an existing entry.
-	 * If the removed IDs are the last aliases pointing to the entry, 
+	 * If the removed IDs are the last aliases pointing to the entry,
 	 * the entry is automatically deleted.
 	 *
 	 * @param id An existing ID used to locate the entry.
