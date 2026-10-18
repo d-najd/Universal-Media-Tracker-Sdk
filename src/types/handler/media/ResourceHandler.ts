@@ -7,7 +7,7 @@ import ResourceHandlerResponse from "./ResourceHandlerResponse"
 
 type ResourceHandler<
 	T extends ResourceHandlerArgs = ResourceHandlerArgs,
-	R extends ResourceHandlerResponse = ResourceHandlerResponse
+	R extends ResourceHandlerResponse = ResourceHandlerResponse,
 > = BaseResourceHandler<T, R> &
 	Handler<T, R> & {
 		/**

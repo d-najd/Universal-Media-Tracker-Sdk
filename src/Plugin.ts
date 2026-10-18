@@ -49,7 +49,7 @@ export default class Plugin {
 	defineHandler(handler: CreateHandler): string {
 		const newHandler: Handler = {
 			id: `${this.config.id}-custom-${this.counter++}`,
-			...handler
+			...handler,
 		}
 
 		this.handlers.set(newHandler.id, newHandler)
@@ -63,7 +63,7 @@ export default class Plugin {
 		const newHandler: ResourceHandler = {
 			id: `${this.config.id}-custom-resource-${this.counter++}`,
 			name: `${this.config.name}`,
-			...handler
+			...handler,
 		}
 
 		this.handlers.set(newHandler.id, newHandler)
@@ -78,7 +78,7 @@ export default class Plugin {
 			id: `${this.config.id}-catalog-${this.counter++}`,
 			name: `${this.config.name}`,
 			...handler,
-			type: "catalog-request"
+			type: "catalog-request",
 		}
 
 		return this.defineResourceHandler(newHandler)
@@ -92,7 +92,7 @@ export default class Plugin {
 			id: `${this.config.id}-meta-${this.counter++}`,
 			name: `${this.config.name}`,
 			...handler,
-			type: "meta-request"
+			type: "meta-request",
 		}
 
 		return this.defineResourceHandler(newHandler)
@@ -102,7 +102,7 @@ export default class Plugin {
 		const newHandler: Handler = {
 			id: `${this.config.id}-plugin-source-${this.counter++}`,
 			...handler,
-			type: "plugin-source"
+			type: "plugin-source",
 		}
 
 		return this.defineHandler(newHandler)
@@ -112,7 +112,7 @@ export default class Plugin {
 		const newHandler: Handler = {
 			id: `${this.config.id}-plugin-factory-${this.counter++}`,
 			...handler,
-			type: "plugin-factory"
+			type: "plugin-factory",
 		}
 
 		return this.defineHandler(newHandler)
@@ -123,7 +123,9 @@ export default class Plugin {
 			id: `${this.config.id}-ui-screen-${this.counter++}`,
 			...handler,
 			type: "ui-screen",
-			callback: handler.callback as unknown as (args: any) => Promise<any>
+			callback: handler.callback as unknown as (
+				args: any,
+			) => Promise<any>,
 		}
 
 		return this.defineHandler(newHandler)
@@ -139,7 +141,7 @@ export default class Plugin {
 			config: this.config,
 			handlers: this.handlers,
 			onLoad: this.onLoadCallback,
-			onUnload: this.onUnloadCallback
+			onUnload: this.onUnloadCallback,
 		}
 	}
 

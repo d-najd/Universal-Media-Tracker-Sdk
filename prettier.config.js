@@ -5,6 +5,6 @@
 export default {
 	semi: false,
 	tabWidth: 4,
-	trailingComma: "none",
-	useTabs: true
+	trailingComma: "all",
+	useTabs: true,
 }

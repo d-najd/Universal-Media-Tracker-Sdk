@@ -12,7 +12,7 @@ export default interface IdStorage {
 	 */
 	readById(
 		id: string,
-		options?: Partial<IdStorageOptions>
+		options?: Partial<IdStorageOptions>,
 	): Promise<StoredData>
 
 	/**
@@ -22,7 +22,7 @@ export default interface IdStorage {
 	 */
 	readMetadataById(
 		id: string,
-		options?: Partial<IdStorageOptions>
+		options?: Partial<IdStorageOptions>,
 	): Promise<IdStorageOptions>
 
 	/**
@@ -38,7 +38,7 @@ export default interface IdStorage {
 	write(
 		ids: string[],
 		data: StoredData,
-		options?: Partial<IdStorageOptions>
+		options?: Partial<IdStorageOptions>,
 	): Promise<void>
 
 	/**
@@ -53,7 +53,7 @@ export default interface IdStorage {
 	addAliases(
 		id: string,
 		ids: string[],
-		options?: Partial<IdStorageOptions>
+		options?: Partial<IdStorageOptions>,
 	): Promise<void>
 
 	/**
@@ -69,7 +69,7 @@ export default interface IdStorage {
 	removeAliases(
 		id: string,
 		ids: string[],
-		options?: Partial<IdStorageOptions>
+		options?: Partial<IdStorageOptions>,
 	): Promise<void>
 
 	/**

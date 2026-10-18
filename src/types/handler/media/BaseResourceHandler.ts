@@ -6,7 +6,7 @@ import ResourceHandlerResponse from "./ResourceHandlerResponse"
 
 type BaseResourceHandler<
 	T extends ResourceHandlerArgs = ResourceHandlerArgs,
-	R extends ResourceHandlerResponse = ResourceHandlerResponse
+	R extends ResourceHandlerResponse = ResourceHandlerResponse,
 > = BaseHandler<T, R> & {
 	readonly name?: string
 	readonly resourceType?: ResourceType | string

@@ -18,7 +18,7 @@ export interface AppPluginsApi {
 	 * @param condition key is pluginId, value is handler
 	 */
 	getHandlersMatchingWithPluginId(
-		condition: (entry: [string, Handler]) => boolean
+		condition: (entry: [string, Handler]) => boolean,
 	): Map<string, Handler[]>
 
 	invokeCallbackOnHandler<T, R>(id: string, args: T): Promise<R>

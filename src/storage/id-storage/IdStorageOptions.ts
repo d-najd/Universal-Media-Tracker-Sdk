@@ -14,7 +14,7 @@ export const DefaultIdStorageOptions = (): Partial<IdStorageOptions> => ({
 	backend: "indexeddb",
 	profile: "default",
 	fileExtension: "bin",
-	driver: "id-storage"
+	driver: "id-storage",
 })
 
 export default IdStorageOptions
