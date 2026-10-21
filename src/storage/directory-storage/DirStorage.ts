@@ -27,11 +27,23 @@ export default interface DirStorage {
 	): Promise<DirEntry[]>
 
 	/**
+    * Checks whether file or folder exists
+    *
+	 * @param path - must include file extension
+	 * @param options - if `policy` is defined, searches only in that policy,
+	 * otherwise searches all policies in order
+    *
+	 * @throws if path is invalid
+	 */
+	exists(path: string, options?: Partial<DirStorageOptions>): Promise<boolean>
+
+	/**
 	 * Read file
 	 * @param path - must include file extension
 	 * @param options - if `policy` is defined, searches only in that policy,
 	 * otherwise searches all policies in order
-	 * @throws if path does not include a file extension
+    *
+	 * @throws if path is invalid (ex dones't include extension)
 	 * @throws if file is not found
 	 */
 	read(
