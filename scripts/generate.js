@@ -15,7 +15,7 @@ const excludePatterns = [
 	"**/*.spec.ts",
 	"**/*.d.ts", // exclude tests & declaration files
 	"**/index.ts", // exclude existing index
-	"**/__tests__/**" // exclude test folders
+	"**/__tests__/**", // exclude test folders
 ]
 const useFileNameAsExportName = true // use filename (without ext) as export name
 const includeNamedExports = true // also export * for files with named exports
@@ -43,7 +43,7 @@ function hasNamedExport(content) {
 async function main() {
 	// Find all TypeScript source files
 	const files = await glob(`${srcDir}/**/*.{ts,tsx}`, {
-		ignore: excludePatterns
+		ignore: excludePatterns,
 	})
 	console.log(`Found ${files.length} files.`)
 
@@ -63,7 +63,7 @@ async function main() {
 				? toIdentifier(relativePath)
 				: "default"
 			lines.push(
-				`export { default as ${exportName} } from '${importPath}';`
+				`export { default as ${exportName} } from '${importPath}';`,
 			)
 		}
 
