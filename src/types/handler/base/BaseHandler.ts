@@ -1,4 +1,4 @@
-import { HandlerTypes } from "../../.."
+import HandlerType from "./HandlerType"
 
 /**
  * Less strict version because helper scripts define default type and id
@@ -6,7 +6,7 @@ import { HandlerTypes } from "../../.."
  */
 type BaseHandler<T = any, R = any> = {
 	readonly id?: string
-	readonly type?: HandlerTypes | string
+	readonly type?: HandlerType | string
 	readonly callback: (args: T) => Promise<R>
 }
 

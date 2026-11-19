@@ -13,11 +13,11 @@
 
 // eslint-disable-next-line
 import BaseHandler from "./BaseHandler"
-import HandlerTypes from "./HandlerTypes"
+import HandlerType from "./HandlerType"
 
 type Handler<T = any, R = any> = BaseHandler<T, R> & {
 	readonly id: string
-	readonly type: HandlerTypes | string
+	readonly type: HandlerType | string
 	readonly callback: (args: T) => Promise<R>
 }
 
