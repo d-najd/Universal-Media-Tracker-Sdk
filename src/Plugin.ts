@@ -145,6 +145,7 @@ export default class Plugin {
 		return this.defineHandler(newHandler)
 	}
 
+   // Should only be enabled in dev mode 
 	private handlerDecoratorCallbackVerifier(
 		callback: (
 			args: HandlerDecoratorArgs,
@@ -167,6 +168,7 @@ export default class Plugin {
 			return result
 		}
 	}
+
 	defineHandlerDecorator(handler: CreateHandlerDecorator): string {
 		const type: HandlerType = "decorator"
 
