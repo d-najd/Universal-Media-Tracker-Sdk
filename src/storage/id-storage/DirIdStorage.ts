@@ -8,6 +8,7 @@ import IdStorageOptions, { DefaultIdStorageOptions } from "./IdStorageOptions"
 
 // TODO add tests to check whether there are race conditions for removing/writing something
 // TODO add test whether recreating idstorage at same path will work properly
+// TODO perhaps move this to the app and provide a constructor from it?
 export default class DirIdStorage implements IdStorage {
 	private constructor(
 		private dirStorage: DirStorage,
