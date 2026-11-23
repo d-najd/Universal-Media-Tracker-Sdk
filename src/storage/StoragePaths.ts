@@ -1,17 +1,16 @@
-import PluginConfig from "../types/PluginConfig"
+export const pluginsDir = "plugins"
+export const pluginsManifestFileName = "manifest.json"
+export const pluginLocalConfigFileName = "config.json"
+export const pluginBundleFileName = "index.js"
 
-export const pluginsPath = "plugins"
-export const pluginConfigName = "config.json"
-export const pluginFileName = "index.js"
+export const pluginDirPath = (pluginId: string) =>
+	`${pluginsDir}/${pluginId}`
 
-export const curPluginPath = (pluginConfig: PluginConfig) => {
-	return pluginsPath + "/" + pluginConfig.id
-}
+export const pluginLocalConfigFilePath = (pluginId: string) =>
+	`${pluginDirPath(pluginId)}/${pluginLocalConfigFileName}`
 
-export const curPluginConfigPath = (pluginConfig: PluginConfig) => {
-	return curPluginPath(pluginConfig) + "/" + pluginConfigName
-}
+export const pluginBundleFilePath = (pluginId: string) =>
+	`${pluginDirPath(pluginId)}/${pluginBundleFileName}`
 
-export const curPluginFilePath = (pluginConfig: PluginConfig) => {
-	return curPluginPath(pluginConfig) + "/" + pluginFileName
-}
+export const pluginsManifestFilePath = () =>
+	`${pluginsDir}/${pluginsManifestFileName}`
