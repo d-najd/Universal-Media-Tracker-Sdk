@@ -21,7 +21,7 @@ export default class Plugin {
 	/**
 	 * key is the handler id
 	 */
-	protected handlers = new Map<string, Handler>()
+	private handlers: Handler[] = []
 
 	private counter = 0
 	private loaded = false
@@ -56,7 +56,7 @@ export default class Plugin {
 			...handler,
 		}
 
-		this.handlers.set(newHandler.id, newHandler)
+      this.setHandler(newHandler)
 		return newHandler.id
 	}
 
@@ -70,7 +70,7 @@ export default class Plugin {
 			...handler,
 		}
 
-		this.handlers.set(newHandler.id, newHandler)
+      this.setHandler(newHandler)
 		return newHandler.id
 	}
 
@@ -145,7 +145,7 @@ export default class Plugin {
 		return this.defineHandler(newHandler)
 	}
 
-   // Should only be enabled in dev mode 
+	// Should only be enabled in dev mode
 	private handlerDecoratorCallbackVerifier(
 		callback: (
 			args: HandlerDecoratorArgs,
@@ -176,7 +176,7 @@ export default class Plugin {
 			id: `${this.config.id}-${type}-${this.counter++}`,
 			...handler,
 			type: type,
-         callback: this.handlerDecoratorCallbackVerifier(handler.callback)
+			callback: this.handlerDecoratorCallbackVerifier(handler.callback),
 		}
 
 		return this.defineHandler(newHandler)
@@ -195,6 +195,14 @@ export default class Plugin {
 			onUnload: this.onUnloadCallback,
 		}
 	}
+
+   private setHandler(handler: Handler) {
+      const existingHandler = this.handlers.find(o => o.id === handler.id)
+      if (existingHandler) {
+         this.handlers[this.handlers.indexOf(existingHandler)] = handler
+         console.error(`OVERRIDING HANDLER WITH ID ${handler.id} FROM INSIDE THE SAME PLUGIN, THIS IS PROBABLY NOT INTENDED`)
+      }
+   }
 
 	private onLoadCallback: () => Promise<void> = async () => {
 		this.loaded = true
